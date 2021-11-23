@@ -1,18 +1,21 @@
 import Phaser from 'phaser'
+import ExampleScene from './scenes/ExampleScene';
 
-import HelloWorldScene from './scenes/HelloWorldScene'
+import GameScene from './scenes/GameScene';
 
 const config: Phaser.Types.Core.GameConfig = {
-	type: Phaser.AUTO,
-	width: 800,
-	height: 600,
+	type: Phaser.WEBGL,
+	width: innerWidth * 3,
+	height: innerHeight * 3,
+	backgroundColor: "#000000",
 	physics: {
 		default: 'arcade',
 		arcade: {
-			gravity: { y: 200 }
+
 		}
 	},
-	scene: [HelloWorldScene]
+	scene: [GameScene]
 }
 
 export default new Phaser.Game(config)
+
